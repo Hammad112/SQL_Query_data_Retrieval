@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configure the API key
-genai.configure(api_key=os.getenv('google_api_key'))
+genai.configure(api_key=os.getenv('AIzaSyBMFWrHTjUzBxzDdrOiWh77T0zrnkdp51M'))
 
 # Function to load Gen AI Model
 def get_gemini_response(question, prompt):
