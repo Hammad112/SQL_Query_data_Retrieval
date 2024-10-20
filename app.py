@@ -34,7 +34,7 @@ Ensure that the generated SQL code does not include ``` at the beginning or end,
 
 ## Streamlit App
 
-st.set_page_config(page_title="Generic SQL Query Generator")
+st.set_page_config(page_title="SQL Query Generator")
 st.header("Generic SQL Query Generator")
 
 # Add custom CSS for input styling
