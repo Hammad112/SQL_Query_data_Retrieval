@@ -1,13 +1,17 @@
 import os
 import streamlit as st
 import google.generativeai as genai
-from dotenv import load_dotenv
 
-# Load the environment variables
-load_dotenv()
 
-# Configure the API key
-genai.configure(api_key='AIzaSyBMFWrHTjUzBxzDdrOiWh77T0zrnkdp51M')
+# Get the API key from Streamlit secrets (for production) or from environment variables (for local dev)
+api_key = st.secrets.get("API_KEY")
+
+# Check if the API key is set, otherwise show an error
+if api_key:
+    genai.configure(api_key=api_key)
+else:
+    st.error("API key not found. Please check your environment variables or Streamlit secrets.")
+
 
 # Function to load Gen AI Model
 def get_gemini_response(question, prompt):
